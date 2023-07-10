@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://monsterju.github.io</id>
+    <title>MonsterJu沿途</title>
+    <updated>2023-07-10T08:21:42.089Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://monsterju.github.io"/>
+    <link rel="self" href="https://monsterju.github.io/atom.xml"/>
+    <subtitle>温故而知新！</subtitle>
+    <logo>https://monsterju.github.io/images/avatar.png</logo>
+    <icon>https://monsterju.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, MonsterJu沿途</rights>
+    <entry>
+        <title type="html"><![CDATA[analyst与质谱仪操作记录]]></title>
+        <id>https://monsterju.github.io/post/J70U6hWCi/</id>
+        <link href="https://monsterju.github.io/post/J70U6hWCi/">
+        </link>
+        <updated>2023-07-05T14:17:10.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[前置理论]]></title>
+        <id>https://monsterju.github.io/post/ve-wYfbyh/</id>
+        <link href="https://monsterju.github.io/post/ve-wYfbyh/">
+        </link>
+        <updated>2023-07-04T14:03:35.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[常见电离源]]></title>
+        <id>https://monsterju.github.io/post/dw-0_CjgS/</id>
+        <link href="https://monsterju.github.io/post/dw-0_CjgS/">
+        </link>
+        <updated>2023-06-19T15:37:18.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[质谱数据处理]]></title>
+        <id>https://monsterju.github.io/post/R7vIQ5Oa3/</id>
+        <link href="https://monsterju.github.io/post/R7vIQ5Oa3/">
+        </link>
+        <updated>2023-06-13T08:12:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>天大色谱-质谱数据处理会议1</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>天大色谱-质谱数据处理会议1</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[质谱]]></title>
+        <id>https://monsterju.github.io/post/zhi-pu/</id>
+        <link href="https://monsterju.github.io/post/zhi-pu/">
+        </link>
+        <updated>2023-06-07T14:44:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>质谱仪：一台称量分子和分子碎片质量的仪器；化学向</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>质谱仪：一台称量分子和分子碎片质量的仪器；化学向</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[眼电处理遇到的问题]]></title>
+        <id>https://monsterju.github.io/post/yan-dian-chu-li-yu-dao-de-wen-ti/</id>
+        <link href="https://monsterju.github.io/post/yan-dian-chu-li-yu-dao-de-wen-ti/">
+        </link>
+        <updated>2023-04-29T14:05:20.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[脑电信号处理]]></title>
+        <id>https://monsterju.github.io/post/nao-dian-xin-hao-chu-li/</id>
+        <link href="https://monsterju.github.io/post/nao-dian-xin-hao-chu-li/">
+        </link>
+        <updated>2023-04-27T07:23:26.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[EOG眨眼分类]]></title>
+        <id>https://monsterju.github.io/post/eog-zha-yan-fen-lei/</id>
+        <link href="https://monsterju.github.io/post/eog-zha-yan-fen-lei/">
+        </link>
+        <updated>2023-04-15T08:10:01.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[研究生调剂记录]]></title>
+        <id>https://monsterju.github.io/post/tiaoji/</id>
+        <link href="https://monsterju.github.io/post/tiaoji/">
+        </link>
+        <updated>2023-04-13T12:26:19.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[kurtosis函数与skewness函数 ]]></title>
+        <id>https://monsterju.github.io/post/kurtosis-han-shu-yu-skewness-han-shu/</id>
+        <link href="https://monsterju.github.io/post/kurtosis-han-shu-yu-skewness-han-shu/">
+        </link>
+        <updated>2023-04-07T12:23:33.000Z</updated>
+        <summary type="html"><![CDATA[<p>matlab的峰值函数与偏度函数在眼电数据处理的应用理解</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>matlab的峰值函数与偏度函数在眼电数据处理的应用理解</p>
+]]></content>
+    </entry>
+</feed>
