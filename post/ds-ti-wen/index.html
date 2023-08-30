@@ -1,0 +1,385 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>DS提问 | MonsterJu沿途</title>
+
+<link rel="shortcut icon" href="https://monsterju.github.io/favicon.ico?v=1693372421747">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://monsterju.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            MonsterJu沿途
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1693372421747"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    DS提问
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-03-26 ·
+                    </time>
+                    
+                        <a href="https://monsterju.github.io/tag/vB9QE4t3y9/" class="post-tags">
+                            # C/C++知识
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>简单摘抄的概念</p>
+<!--more -->
+<h2 id="基础"><strong>基础</strong></h2>
+<ol>
+<li>数据、数据元素、数据项、数据结构</li>
+<li>数据的逻辑结构和存储结构
+<ul>
+<li>逻辑：集合、线性结构、树形结构、图状结构（网状结构）</li>
+<li>存储：顺序存储、链式存储、索引存储、散列存储</li>
+</ul>
+</li>
+<li>算法特性和算法设计要求
+<ul>
+<li>有穷性、确定性、输入、输出、可行性</li>
+<li>正确性、可读性、健壮性、高效率与低存储量需求</li>
+</ul>
+</li>
+<li>时间复杂度和空间复杂度</li>
+</ol>
+<ul>
+<li>常见排序算法的时间复杂度</li>
+</ul>
+<ol start="5">
+<li>队列假溢出：存储区未满但溢出
+<ul>
+<li>循环队列：空一个位置，区分队空队满；逻辑环，顺序存储
+<ul>
+<li>队空：front = rear</li>
+<li>队满：front = (rear+1)%maxsize</li>
+<li>插入删除：（front/rear+1)maxsize</li>
+</ul>
+</li>
+<li>设标记tag记录最后一次操作是插入还是删除，判断front = rear 属于那种情况，后再平移操作</li>
+<li>增设记录队列长度的变量，再平移操作</li>
+</ul>
+</li>
+<li>静态链表
+<ul>
+<li>用数组来描述线性表的链式结构，指针是结点的相对下标（数组下标）</li>
+<li>预先分配连续的内存空间</li>
+</ul>
+</li>
+<li>头指针、首元结点与头结点的区别
+<ul>
+<li>存储的第一个元素之前是否附设一个结点</li>
+<li>头结点优点：使对首元结点的操作与其他结点操作一致；头指针非空，使空表和非空表的操作一致</li>
+</ul>
+</li>
+<li>顺序表和链表的比较
+<ul>
+<li>存取（读写）方式：是否随机存取</li>
+<li>逻辑结构与存储结构：逻辑上相邻，存储上是否相邻</li>
+<li>查找、插入与删除操作：
+<ul>
+<li>按值查找，区分是否有序，O(n)与O(logn),可用折半查找；按序号查找，O(1)与O(n)</li>
+<li>插入删除，平均移动半个表长的元素与修改指针域</li>
+</ul>
+</li>
+<li>空间分配：静态动态分配</li>
+</ul>
+</li>
+<li>快速排序优点</li>
+<li>prim（普利姆）算法和kruskal（克鲁斯卡尔）算法的区别</li>
+<li>KMP算法:
+<ul>
+<li>概念</li>
+<li><a href="https://zhuanlan.zhihu.com/p/83334559">有限状态机</a></li>
+</ul>
+</li>
+<li>实现单链表的就地逆置<br>
+就地指算法的辅助空间为O(1)<br>
+对于有头结点L的链表：另设两个指针p、q分别指向第一个元素与第二个元素，首先L指向NULL，遍历链表中执行：p-&gt;next = L, L= p, p = q, q = q-&gt;next</li>
+<li>二叉排序树的概念与算法</li>
+</ol>
+<ul>
+<li>左子树上所有结点的值均小于根结点的值</li>
+<li>右子树上所有结点的值均大于根结点的值</li>
+<li>左右子树也是二叉排序树</li>
+<li>递归查找</li>
+</ul>
+<ol start="14">
+<li>平衡二叉树：任意结点的不超过1
+<ul>
+<li>平衡因子：左右子树高度差</li>
+<li>对二叉树二改进，可减少查找次数</li>
+<li>旋转调整</li>
+</ul>
+</li>
+<li>哈夫曼树：带权路径长度最小的二叉树（n个权值就有n个叶结点）<br>
+构造规则：</li>
+</ol>
+<ul>
+<li>将w1、w2、... 、wn看成是有n棵树的森林，每棵树只有一个结点</li>
+<li>在森林中选出两个根结点的权值最小的树合并为一棵新树的左右子树，新树的根结点权值为其左右子树根结点结点权值之和</li>
+<li>从森林中删除这两棵树，并将新树加入森林</li>
+<li>重复上述两步，直至森林中只剩一棵树为止，该树即为所求的哈夫曼树</li>
+</ul>
+<p>特点：权值越大的结点，离根结点越近；树中没有度为1的结点；<br>
+哈夫曼编码：最短前缀编码<br>
+带权路径长度：Σ（叶结点权值*路径长度）<br>
+16. 深度优先搜索遍历和广度优先搜索遍历的过程<br>
+深度：一条路走到头，撞墙回头，贪。栈。类似树的先序遍历<br>
+广度：稳扎稳打，逐步扩散。队列。类似树的层次遍历</p>
+<ul>
+<li>深度、广度遍历不一定唯一（可从不同顶点开始）<br>
+贪吃蛇游戏思考：每次吃奖励，是通过一条路直冲，直达奖励，还是通过盘曲身体，慢慢靠近奖励</li>
+</ul>
+<ol start="17">
+<li>最小生成树的理解
+<ul>
+<li>连通图的最小连通子图，在添加一条边就成一个环</li>
+<li>普里姆算法</li>
+<li>库鲁斯卡尔算法</li>
+<li>n个结点的最小生成树有n个结点，n-1条边</li>
+</ul>
+</li>
+<li>二叉树的存储方式
+<ul>
+<li>顺序结构：用数组来存储二叉树，按编号依次填入数组；占用完全二叉树的存储空间，可能浪费空间</li>
+<li>链式存储：双亲、兄弟等</li>
+</ul>
+</li>
+<li>大根堆与小根堆
+<ul>
+<li>堆，一种数据结构，可看作完全二叉树</li>
+<li>任何一个非叶结点的值都不大于(或不小于)其左右结点的值</li>
+<li>堆排序</li>
+</ul>
+</li>
+<li>非连通图如何访问每一个结点
+<ul>
+<li>从每一个连通分量中选择初始点，分别进行遍历</li>
+<li>DFS或者BFS</li>
+</ul>
+</li>
+<li>M阶B树和M阶B+ 树的区别</li>
+<li>二叉树的遍历
+<ul>
+<li>先序、中序、后序、层次遍历</li>
+</ul>
+</li>
+<li>装填因子 = 填入表中的元素个数/ 散列表的长度
+<ul>
+<li>散列表长度不是求余值</li>
+</ul>
+</li>
+<li>栈和队列的应用
+<ul>
+<li>受限的线性表</li>
+<li>队列，先进先出，图的BFS、二叉树的层次遍历、缓存区</li>
+<li>栈，后进后出，括号匹配、递归调用、表达式后缀中缀计算</li>
+</ul>
+</li>
+<li>排序方法<br>
+- 插入类：直接插入排序、希尔排序<br>
+- 交换类：冒泡排序、快速排序<br>
+- 选择类：简单选择排序、堆排序<br>
+- 归并类：二路归并排序<br>
+- 基数排序<br>
+不稳定排序：简希快堆；简单选择、希尔、快速、堆</li>
+<li>内部排序与外部排序<br>
+区别：排序期间元素是否全部放入内存中进行排序；<br>
+内外存之间进行移动需要缓冲区</li>
+<li>AOE网：带权有向图中，以顶点表示事件，边表示活动，边上的权值表示完成该活动的开销<br>
+- 关键路径及关键活动，总开销受关键路径（活动）的影响，开销改变是不是关键活动，有多少条关键活动，是否有部分重合</li>
+</ol>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://monsterju.github.io/post/jue-ce-shu/" class="post-title gt-a-link">
+                    决策树
+                </a>
+            </div>
+        
+
+        
+
+        
+            
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+    // md5.min.js
+    !function(n){
+        "use strict";
+        function d(n,t){var r=(65535&n)+(65535&t);return(n>>16)+(t>>16)+(r>>16)<<16|65535&r}
+        function f(n,t,r,e,o,u){return d((c=d(d(t,n),d(e,u)))<<(f=o)|c>>>32-f,r);var c,f}
+        function l(n,t,r,e,o,u,c){return f(t&r|~t&e,n,t,o,u,c)}
+        function v(n,t,r,e,o,u,c){return f(t&e|r&~e,n,t,o,u,c)}
+        function g(n,t,r,e,o,u,c){return f(t^r^e,n,t,o,u,c)}
+        function m(n,t,r,e,o,u,c){return f(r^(t|~e),n,t,o,u,c)}
+        function i(n,t){var r,e,o,u,c;n[t>>5]|=128<<t%32,n[14+(t+64>>>9<<4)]=t;var f=1732584193,i=-271733879,a=-1732584194,h=271733878;for(r=0;r<n.length;r+=16)f=l(e=f,o=i,u=a,c=h,n[r],7,-680876936),h=l(h,f,i,a,n[r+1],12,-389564586),a=l(a,h,f,i,n[r+2],17,606105819),i=l(i,a,h,f,n[r+3],22,-1044525330),f=l(f,i,a,h,n[r+4],7,-176418897),h=l(h,f,i,a,n[r+5],12,1200080426),a=l(a,h,f,i,n[r+6],17,-1473231341),i=l(i,a,h,f,n[r+7],22,-45705983),f=l(f,i,a,h,n[r+8],7,1770035416),h=l(h,f,i,a,n[r+9],12,-1958414417),a=l(a,h,f,i,n[r+10],17,-42063),i=l(i,a,h,f,n[r+11],22,-1990404162),f=l(f,i,a,h,n[r+12],7,1804603682),h=l(h,f,i,a,n[r+13],12,-40341101),a=l(a,h,f,i,n[r+14],17,-1502002290),f=v(f,i=l(i,a,h,f,n[r+15],22,1236535329),a,h,n[r+1],5,-165796510),h=v(h,f,i,a,n[r+6],9,-1069501632),a=v(a,h,f,i,n[r+11],14,643717713),i=v(i,a,h,f,n[r],20,-373897302),f=v(f,i,a,h,n[r+5],5,-701558691),h=v(h,f,i,a,n[r+10],9,38016083),a=v(a,h,f,i,n[r+15],14,-660478335),i=v(i,a,h,f,n[r+4],20,-405537848),f=v(f,i,a,h,n[r+9],5,568446438),h=v(h,f,i,a,n[r+14],9,-1019803690),a=v(a,h,f,i,n[r+3],14,-187363961),i=v(i,a,h,f,n[r+8],20,1163531501),f=v(f,i,a,h,n[r+13],5,-1444681467),h=v(h,f,i,a,n[r+2],9,-51403784),a=v(a,h,f,i,n[r+7],14,1735328473),f=g(f,i=v(i,a,h,f,n[r+12],20,-1926607734),a,h,n[r+5],4,-378558),h=g(h,f,i,a,n[r+8],11,-2022574463),a=g(a,h,f,i,n[r+11],16,1839030562),i=g(i,a,h,f,n[r+14],23,-35309556),f=g(f,i,a,h,n[r+1],4,-1530992060),h=g(h,f,i,a,n[r+4],11,1272893353),a=g(a,h,f,i,n[r+7],16,-155497632),i=g(i,a,h,f,n[r+10],23,-1094730640),f=g(f,i,a,h,n[r+13],4,681279174),h=g(h,f,i,a,n[r],11,-358537222),a=g(a,h,f,i,n[r+3],16,-722521979),i=g(i,a,h,f,n[r+6],23,76029189),f=g(f,i,a,h,n[r+9],4,-640364487),h=g(h,f,i,a,n[r+12],11,-421815835),a=g(a,h,f,i,n[r+15],16,530742520),f=m(f,i=g(i,a,h,f,n[r+2],23,-995338651),a,h,n[r],6,-198630844),h=m(h,f,i,a,n[r+7],10,1126891415),a=m(a,h,f,i,n[r+14],15,-1416354905),i=m(i,a,h,f,n[r+5],21,-57434055),f=m(f,i,a,h,n[r+12],6,1700485571),h=m(h,f,i,a,n[r+3],10,-1894986606),a=m(a,h,f,i,n[r+10],15,-1051523),i=m(i,a,h,f,n[r+1],21,-2054922799),f=m(f,i,a,h,n[r+8],6,1873313359),h=m(h,f,i,a,n[r+15],10,-30611744),a=m(a,h,f,i,n[r+6],15,-1560198380),i=m(i,a,h,f,n[r+13],21,1309151649),f=m(f,i,a,h,n[r+4],6,-145523070),h=m(h,f,i,a,n[r+11],10,-1120210379),a=m(a,h,f,i,n[r+2],15,718787259),i=m(i,a,h,f,n[r+9],21,-343485551),f=d(f,e),i=d(i,o),a=d(a,u),h=d(h,c);return[f,i,a,h]}
+        function a(n){var t,r="",e=32*n.length;for(t=0;t<e;t+=8)r+=String.fromCharCode(n[t>>5]>>>t%32&255);return r}
+        function h(n){var t,r=[];for(r[(n.length>>2)-1]=void 0,t=0;t<r.length;t+=1)r[t]=0;var e=8*n.length;for(t=0;t<e;t+=8)r[t>>5]|=(255&n.charCodeAt(t/8))<<t%32;return r}
+        function e(n){var t,r,e="0123456789abcdef",o="";for(r=0;r<n.length;r+=1)t=n.charCodeAt(r),o+=e.charAt(t>>>4&15)+e.charAt(15&t);return o}
+        function r(n){return unescape(encodeURIComponent(n))}
+        function o(n){return a(i(h(t=r(n)),8*t.length));var t}
+        function u(n,t){return function(n,t){var r,e,o=h(n),u=[],c=[];for(u[15]=c[15]=void 0,16<o.length&&(o=i(o,8*n.length)),r=0;r<16;r+=1)u[r]=909522486^o[r],c[r]=1549556828^o[r];return e=i(u.concat(h(t)),512+8*t.length),a(i(c.concat(e),640))}(r(n),r(t))}
+        function t(n,t,r){return t?r?u(t,n):e(u(t,n)):r?o(n):e(o(n))}
+        "function"==typeof define&&define.amd?define(function(){return t}):"object"==typeof module&&module.exports?module.exports=t:n.md5=t;
+    }(this);
+</script>
+
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '8e203471c92ce2d07df6',
+    clientSecret: 'fe76a0ed44d47527c4314b1a91b344ce1ec2b213',
+    repo: 'monsterju.github.io',
+    owner: 'monsterju',
+    admin: ['monsterju'],
+    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false       // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first"> Seeking Truth from Facts！！</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        温故而知新！加油加油！
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://monsterju.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

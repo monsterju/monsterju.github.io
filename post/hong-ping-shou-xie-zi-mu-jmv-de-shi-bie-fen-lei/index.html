@@ -1,0 +1,331 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>触屏手写字母J、M、V的识别分类 | MonsterJu沿途</title>
+
+<link rel="shortcut icon" href="https://monsterju.github.io/favicon.ico?v=1693372421747">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://monsterju.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            MonsterJu沿途
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1693372421747"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    触屏手写字母J、M、V的识别分类
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-04-01 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <p>基于matlab实现，采用knn算法</p>
+<!--more-->
+<h2 id="导入数据">导入数据</h2>
+<p>可以使用 readtable 函数从电子表格或文本文件导入表格数据，并将结果以表的形式存储。</p>
+<pre><code class="language-matlab">letter = readtable(&quot;M.txt&quot;);
+plot(letter.X,letter.Y)
+axis equal
+</code></pre>
+<p>默认轴范围会使字母的纵横比失真。您可以使用 axis 命令强制轴保持数据的纵横比。使用命令 axis equal 修正绘图的纵横比。<br>
+若不是正方形屏幕显示：将表 letter 的变量 X 中的值乘以纵横比 1.5。将结果重新赋给 X，使 letter 包含修正后的数据</p>
+<h2 id="处理数据">处理数据</h2>
+<p>时间归一化：对表 letter 的 Time 变量进行偏移以从 0 开始，通过从所有元素中减去第一个值并将结果除以 1000 以转换为秒。将结果重新赋给 Time，使 letter 包含调整后的数据。</p>
+<pre><code class="language-matlab">lette.time = (letter.time-letter.time(1))/1000
+</code></pre>
+<h2 id="计算特征">计算特征</h2>
+<p>这些字母的哪些特点可用于将 J 与 M 或 V 区分开来？我们的目标不是使用原始信号，而是计算出可将整个信号提取为简单、有用的信息单元的值，这些信息单元称为特征。<br>
+对于字母 J 和 M，一个简单的特征可能是纵横比（字母的高度相对于宽度的比例）。J 可能高而窄，M 可能更接近正方形。<br>
+与 J 和 M 相比，书写 V 的速度更快，因此信号的持续时间也可能是一个区分特征。</p>
+<h3 id="特征">特征</h3>
+<p>持续时间:通过提取 letter.Time 的最后一个值并将结果存储在名为 dur 的变量中，来计算书写该字母所需的时间。<br>
+字母的纵横比：使用 range 函数通过将 letter.Y 的值极差除以 letter.X 的值极差来计算字母的纵横比。将结果赋给名为 aratio 的变量。</p>
+<pre><code class="language-matlab">dur = letter.Time(end)
+aratio = range(letter.Y)/range(letter.X)
+</code></pre>
+<p>range 函数返回数组中值的极差。即 range(x) 等效于 max(x) - min(x)</p>
+<p>猜测结果：<br>
+字母M的纵横比更接近于1，持续时间较长<br>
+字母J、V的纵横比较大，持续时间较短，V更短</p>
+<h2 id="提取特征">提取特征</h2>
+<p>尚不清楚这些特征是否足以区分数据集中的三个字母（J、M 和 V）:<br>
+1.使用 scatter 函数绘制提取的特征，水平轴上为纵横比，垂直轴上为持续时间。但没有着色，所以区分不了特征是否足够</p>
+<pre><code class="language-marlab">scatter(features.AspectRatio,features.Duration)
+</code></pre>
+<p><img src="https://monsterju.github.io/post-images/1680355073236.png" alt="" loading="lazy"><br>
+2.gscatter 函数生成一个分组散点图 - 即根据分组变量对点进行着色的散点图。gscatter(x,y,g)，使用 gscatter 函数创建散点图，根据字母(g)进行着色，字母存储在表 features 的 Character 变量中。</p>
+<pre><code class="language-matlab">gscatter(features.AspectRatio,features.Duration,features.Character)
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://monsterju.github.io/post-images/1680355080319.png" alt="" loading="lazy"></figure>
+<h2 id="建立模型">建立模型</h2>
+<p>没有一种绝对“正确”的方法将平面划分为 J、M 和 V 类。不同分类算法会产生不同划分。</p>
+<p>一个简单模型是将一个观测值与最邻近的已知示例划分为相同的类。这称为 k 最近邻 (kNN) 模型。您可以通过将数据表传递给 fitcknn 函数来拟合 kNN 模型。</p>
+<p>mdl = fitcknn(data,&quot;ResponseVariable&quot;);<br>
+第二个输入是表中响应变量的名称（即模型要预测的类）。输出是包含拟合模型的变量。</p>
+<pre><code class="language-matlab">knnmodel = fitcknn(features,&quot;Character&quot;)
+</code></pre>
+<p>使用 fitcknn 函数对 features 中存储的数据进行模型拟合。已知的类存储在名为 Character 的变量中。将生成的模型存储在名为 knnmodel 的变量中。</p>
+<h3 id="预测">预测</h3>
+<p>根据数据建立模型后，您可以使用它对新观测值进行分类。这只需计算新观测值的特征并确定它们位于预测变量空间的哪个区域。<br>
+predict 函数用于确定新观测值的预测类。<br>
+predClass = predict(model,newdata)<br>
+输入是经过训练的模型和新观测值。输出是 newdata 中每个观测值的预测类的分类数组。</p>
+<p>通常情况下，新观测值以表的形式出现，其预测变量与用于训练模型的预测变量相同。然而，在本例中，模型使用了两个数值特征（纵横比和持续时间），因此观测值也能以具有两列的数值数组形式出现。<br>
+使用 predict 函数和经过训练的模型 knnmodel 对纵横比为 4、持续时间为 1.2 的一个字母进行分类。将预测存储在名为 predicted 的变量中。以二元素行向量形式提供字母特征。</p>
+<pre><code class="language-matlab">newdata = [4,1.2]
+predicted = predict(knnmodel,newdata)
+</code></pre>
+<p>预测结果为 V</p>
+<h3 id="k值选择">k值选择</h3>
+<p>默认情况下，fitcknn 用 k= 1 对 kNN 模型进行拟合。也就是说，该模型仅使用最邻近的已知示例对给定观测值进行分类。因而模型对训练数据中的任何离群值都敏感，例如上图中突出显示的离群值。离群值附近的新观测值可能被误分类。<br>
+可以通过增大 k 的值（即，使用若干邻点的最常见类），使模型对训练数据中的特定观测值不太敏感。这通常会提高模型的总体性能。然而，模型在任何特定测试集上的性能取决于该测试集中的具体观测值。</p>
+<p>通过在调用 fitcknn 时设置 &quot;NumNeighbors&quot; 属性，可以在 kNN 模型中指定 k 的值。<br>
+mdl = fitcknn(data,&quot;ResponseVariable&quot;,...&quot;NumNeighbors&quot;,10);</p>
+<pre><code class="language-matlab">knnmodel = fitcknn(features,&quot;Character&quot;,NumNeighbors=5)
+newdata = [4,1.2]
+predicted = predict(knnmodel,newdata)
+</code></pre>
+<p>重新生成模型<br>
+得到预测结果：J  。发现更改邻点的数量改变了对要测试的观测值的预测。</p>
+<p>通过将新数据的矩阵或表传递给 predict 函数，可以获得对多个观测值的预测。</p>
+<ol>
+<li>输入原始数据测试❌<br>
+predictions = predict(knnmodel,features)<br>
+可以串联分类数组来并排查看预测和真实类。[predictions,features.Character]</li>
+<li>输入测试集测试<br>
+predictions= predict(knnmodel,testdata)</li>
+</ol>
+<h2 id="评估模型">评估模型</h2>
+<p>测试观测值的已知所属类存储在表 testdata 的变量 Character 中。</p>
+<pre><code class="language-matlab">iscorrect= (predictions==testdata.Character)
+accuracy = sum(iscorrect)/numel(iscorrect)
+</code></pre>
+<p>将正确预测数除以预测总数，计算出正确预测的比例。将结果存储在名为 accuracy 的变量中。可以使用 sum 函数确定正确预测数，使用 numel 函数来确定预测总数。</p>
+<p>但常用的评估模型指标是<strong>误分类率</strong>（不正确预测的比例），而不是准确度（正确预测的比例）。</p>
+<pre><code class="language-matlab">iscorrect= predictions~=testdata.Character
+misclassrate = sum(iscorrect)/numel(iscorrect)
+</code></pre>
+<p>准确度和误分类率使用单个值来描述模型的整体性能，但进一步细分模型混淆了哪些类可能会很有用。<br>
+混淆矩阵显示真实类和预测类的每个组合的观测值数目。混淆矩阵通常根据元素的值给元素着色来实现可视化。通常，对角线元素（正确分类）用同一种颜色着色，其他元素（不正确分类）用另一种颜色着色。可以使用 confusionchart 函数来可视化混淆矩阵。<br>
+confusionchart(ytrue,ypred);其中 ytrue 是已知类的向量，ypred 是预测类的向量。</p>
+<pre><code class="language-matlab">confusionchart(predictions,testdata.Character)
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://monsterju.github.io/post-images/1680351110583.png" alt="" loading="lazy"></figure>
+<h4 id="误分类观察">误分类观察</h4>
+<p>调查经常混淆的类的特征会很有用。尝试使用不正确分类的逻辑数组对 testdata 和 predictions 进行索引，以获得被误分类的观测值的数据。</p>
+<pre><code class="language-matlab">data1 = testdata((iswrong ==1),:)
+pre= predictions((iswrong ==1),:)
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://monsterju.github.io/post-images/1680352663564.png" alt="" loading="lazy"></figure>
+<p>发现误判在重叠区</p>
+<h2 id="以同样流程尝试13个字母的分类">以同样流程尝试13个字母的分类</h2>
+<pre><code class="language-matlab">%导入数据
+load featuredata13letters.mat
+%观测值绘图
+gscatter(features.AspectRatio,features.Duration,features.Character)
+%建立模型
+knnmodel= fitcknn(features,&quot;Character&quot;,NumNeighbors=5)
+predictions= predict(knnmodel,testdata)
+%评估模型
+iswrong= predictions~=testdata.Character
+misclass= sum(iswrong)/numel(iswrong)
+confusionchart(testdata.Character,predictions)
+···
+![](https://monsterju.github.io/post-images/1680353859983.png)
+
+只有两个特征模型（用于区分三个特定字母）的模型无法泛化到许多字母。
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://monsterju.github.io/post/matlab-guan-fang-jiao-cheng/" class="post-title gt-a-link">
+                    matlab官方教程
+                </a>
+            </div>
+        
+
+        
+
+        
+            
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+    // md5.min.js
+    !function(n){
+        "use strict";
+        function d(n,t){var r=(65535&n)+(65535&t);return(n>>16)+(t>>16)+(r>>16)<<16|65535&r}
+        function f(n,t,r,e,o,u){return d((c=d(d(t,n),d(e,u)))<<(f=o)|c>>>32-f,r);var c,f}
+        function l(n,t,r,e,o,u,c){return f(t&r|~t&e,n,t,o,u,c)}
+        function v(n,t,r,e,o,u,c){return f(t&e|r&~e,n,t,o,u,c)}
+        function g(n,t,r,e,o,u,c){return f(t^r^e,n,t,o,u,c)}
+        function m(n,t,r,e,o,u,c){return f(r^(t|~e),n,t,o,u,c)}
+        function i(n,t){var r,e,o,u,c;n[t>>5]|=128<<t%32,n[14+(t+64>>>9<<4)]=t;var f=1732584193,i=-271733879,a=-1732584194,h=271733878;for(r=0;r<n.length;r+=16)f=l(e=f,o=i,u=a,c=h,n[r],7,-680876936),h=l(h,f,i,a,n[r+1],12,-389564586),a=l(a,h,f,i,n[r+2],17,606105819),i=l(i,a,h,f,n[r+3],22,-1044525330),f=l(f,i,a,h,n[r+4],7,-176418897),h=l(h,f,i,a,n[r+5],12,1200080426),a=l(a,h,f,i,n[r+6],17,-1473231341),i=l(i,a,h,f,n[r+7],22,-45705983),f=l(f,i,a,h,n[r+8],7,1770035416),h=l(h,f,i,a,n[r+9],12,-1958414417),a=l(a,h,f,i,n[r+10],17,-42063),i=l(i,a,h,f,n[r+11],22,-1990404162),f=l(f,i,a,h,n[r+12],7,1804603682),h=l(h,f,i,a,n[r+13],12,-40341101),a=l(a,h,f,i,n[r+14],17,-1502002290),f=v(f,i=l(i,a,h,f,n[r+15],22,1236535329),a,h,n[r+1],5,-165796510),h=v(h,f,i,a,n[r+6],9,-1069501632),a=v(a,h,f,i,n[r+11],14,643717713),i=v(i,a,h,f,n[r],20,-373897302),f=v(f,i,a,h,n[r+5],5,-701558691),h=v(h,f,i,a,n[r+10],9,38016083),a=v(a,h,f,i,n[r+15],14,-660478335),i=v(i,a,h,f,n[r+4],20,-405537848),f=v(f,i,a,h,n[r+9],5,568446438),h=v(h,f,i,a,n[r+14],9,-1019803690),a=v(a,h,f,i,n[r+3],14,-187363961),i=v(i,a,h,f,n[r+8],20,1163531501),f=v(f,i,a,h,n[r+13],5,-1444681467),h=v(h,f,i,a,n[r+2],9,-51403784),a=v(a,h,f,i,n[r+7],14,1735328473),f=g(f,i=v(i,a,h,f,n[r+12],20,-1926607734),a,h,n[r+5],4,-378558),h=g(h,f,i,a,n[r+8],11,-2022574463),a=g(a,h,f,i,n[r+11],16,1839030562),i=g(i,a,h,f,n[r+14],23,-35309556),f=g(f,i,a,h,n[r+1],4,-1530992060),h=g(h,f,i,a,n[r+4],11,1272893353),a=g(a,h,f,i,n[r+7],16,-155497632),i=g(i,a,h,f,n[r+10],23,-1094730640),f=g(f,i,a,h,n[r+13],4,681279174),h=g(h,f,i,a,n[r],11,-358537222),a=g(a,h,f,i,n[r+3],16,-722521979),i=g(i,a,h,f,n[r+6],23,76029189),f=g(f,i,a,h,n[r+9],4,-640364487),h=g(h,f,i,a,n[r+12],11,-421815835),a=g(a,h,f,i,n[r+15],16,530742520),f=m(f,i=g(i,a,h,f,n[r+2],23,-995338651),a,h,n[r],6,-198630844),h=m(h,f,i,a,n[r+7],10,1126891415),a=m(a,h,f,i,n[r+14],15,-1416354905),i=m(i,a,h,f,n[r+5],21,-57434055),f=m(f,i,a,h,n[r+12],6,1700485571),h=m(h,f,i,a,n[r+3],10,-1894986606),a=m(a,h,f,i,n[r+10],15,-1051523),i=m(i,a,h,f,n[r+1],21,-2054922799),f=m(f,i,a,h,n[r+8],6,1873313359),h=m(h,f,i,a,n[r+15],10,-30611744),a=m(a,h,f,i,n[r+6],15,-1560198380),i=m(i,a,h,f,n[r+13],21,1309151649),f=m(f,i,a,h,n[r+4],6,-145523070),h=m(h,f,i,a,n[r+11],10,-1120210379),a=m(a,h,f,i,n[r+2],15,718787259),i=m(i,a,h,f,n[r+9],21,-343485551),f=d(f,e),i=d(i,o),a=d(a,u),h=d(h,c);return[f,i,a,h]}
+        function a(n){var t,r="",e=32*n.length;for(t=0;t<e;t+=8)r+=String.fromCharCode(n[t>>5]>>>t%32&255);return r}
+        function h(n){var t,r=[];for(r[(n.length>>2)-1]=void 0,t=0;t<r.length;t+=1)r[t]=0;var e=8*n.length;for(t=0;t<e;t+=8)r[t>>5]|=(255&n.charCodeAt(t/8))<<t%32;return r}
+        function e(n){var t,r,e="0123456789abcdef",o="";for(r=0;r<n.length;r+=1)t=n.charCodeAt(r),o+=e.charAt(t>>>4&15)+e.charAt(15&t);return o}
+        function r(n){return unescape(encodeURIComponent(n))}
+        function o(n){return a(i(h(t=r(n)),8*t.length));var t}
+        function u(n,t){return function(n,t){var r,e,o=h(n),u=[],c=[];for(u[15]=c[15]=void 0,16<o.length&&(o=i(o,8*n.length)),r=0;r<16;r+=1)u[r]=909522486^o[r],c[r]=1549556828^o[r];return e=i(u.concat(h(t)),512+8*t.length),a(i(c.concat(e),640))}(r(n),r(t))}
+        function t(n,t,r){return t?r?u(t,n):e(u(t,n)):r?o(n):e(o(n))}
+        "function"==typeof define&&define.amd?define(function(){return t}):"object"==typeof module&&module.exports?module.exports=t:n.md5=t;
+    }(this);
+</script>
+
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '8e203471c92ce2d07df6',
+    clientSecret: 'fe76a0ed44d47527c4314b1a91b344ce1ec2b213',
+    repo: 'monsterju.github.io',
+    owner: 'monsterju',
+    admin: ['monsterju'],
+    id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false       // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+            
+
+            
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first"> Seeking Truth from Facts！！</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        温故而知新！加油加油！
+    </div>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://monsterju.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

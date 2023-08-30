@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://monsterju.github.io</id>
+    <title>MonsterJu沿途</title>
+    <updated>2023-08-30T05:56:49.662Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://monsterju.github.io"/>
+    <link rel="self" href="https://monsterju.github.io/atom.xml"/>
+    <subtitle> Seeking Truth from Facts！！</subtitle>
+    <logo>https://monsterju.github.io/images/avatar.png</logo>
+    <icon>https://monsterju.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, MonsterJu沿途</rights>
+    <entry>
+        <title type="html"><![CDATA[质谱文献疑惑]]></title>
+        <id>https://monsterju.github.io/post/zhi-pu-wen-xian-yi-huo/</id>
+        <link href="https://monsterju.github.io/post/zhi-pu-wen-xian-yi-huo/">
+        </link>
+        <updated>2023-08-15T03:08:05.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[通讯协议]]></title>
+        <id>https://monsterju.github.io/post/tong-xun-xie-yi/</id>
+        <link href="https://monsterju.github.io/post/tong-xun-xie-yi/">
+        </link>
+        <updated>2023-08-07T06:12:10.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[质谱仪系统]]></title>
+        <id>https://monsterju.github.io/post/jTebPp1h4/</id>
+        <link href="https://monsterju.github.io/post/jTebPp1h4/">
+        </link>
+        <updated>2023-08-01T05:27:34.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[质量分析器]]></title>
+        <id>https://monsterju.github.io/post/-4-USDr9N/</id>
+        <link href="https://monsterju.github.io/post/-4-USDr9N/">
+        </link>
+        <updated>2023-07-16T07:53:21.000Z</updated>
+        <summary type="html"><![CDATA[<p>是利用不同类型的电场和磁场使离子束偏转（偏转聚焦）并将其按质荷比分开的离子光学器件。<br>
+（“棱镜与透镜“”的离子光学特性）</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>是利用不同类型的电场和磁场使离子束偏转（偏转聚焦）并将其按质荷比分开的离子光学器件。<br>
+（“棱镜与透镜“”的离子光学特性）</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[analyst与质谱仪操作记录]]></title>
+        <id>https://monsterju.github.io/post/J70U6hWCi/</id>
+        <link href="https://monsterju.github.io/post/J70U6hWCi/">
+        </link>
+        <updated>2023-07-05T14:17:10.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[前置理论]]></title>
+        <id>https://monsterju.github.io/post/ve-wYfbyh/</id>
+        <link href="https://monsterju.github.io/post/ve-wYfbyh/">
+        </link>
+        <updated>2023-07-04T14:03:35.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[三重四极杆质谱仪]]></title>
+        <id>https://monsterju.github.io/post/9n2vb914a/</id>
+        <link href="https://monsterju.github.io/post/9n2vb914a/">
+        </link>
+        <updated>2023-07-03T15:58:51.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[常见电离源]]></title>
+        <id>https://monsterju.github.io/post/dw-0_CjgS/</id>
+        <link href="https://monsterju.github.io/post/dw-0_CjgS/">
+        </link>
+        <updated>2023-06-19T15:37:18.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[质谱数据处理]]></title>
+        <id>https://monsterju.github.io/post/R7vIQ5Oa3/</id>
+        <link href="https://monsterju.github.io/post/R7vIQ5Oa3/">
+        </link>
+        <updated>2023-06-13T08:12:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>天大色谱-质谱数据处理会议1</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>天大色谱-质谱数据处理会议1</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[质谱]]></title>
+        <id>https://monsterju.github.io/post/zhi-pu/</id>
+        <link href="https://monsterju.github.io/post/zhi-pu/">
+        </link>
+        <updated>2023-06-07T14:44:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>质谱仪：一台称量分子和分子碎片质量的仪器；化学向</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>质谱仪：一台称量分子和分子碎片质量的仪器；化学向</p>
+]]></content>
+    </entry>
+</feed>
